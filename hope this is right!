@@ -1,0 +1,132 @@
+/**
+ * This one took a while but I think I got it this time.
+ *
+ * Paul Gelinas
+ * @version somewhere between 1.0 and 10000.0
+ */
+import java.util.Scanner;
+public class trying_2_aray_better_much_fun
+{
+   static void clearScreen() {
+        System.out.print('\u000C');
+    }
+   static void lets_see_if_this_works()
+   {
+       System.out.println("There is an array with a place for five strings.");
+   }
+   static void lets_do_this_again()
+   {
+       System.out.println("Here are the values in the array.");
+   }
+   static void maybe_this_would_work()
+   {
+       System.out.print("Type true if you'd like to replace one or more elements in the array.  ");
+   }
+   static void Jojo()
+   {
+       System.out.println("Here are the values in the array.");
+   }
+   static void try_again()
+   {
+        System.out.print("Would you like to start this process again?  Type true or false:  ");
+   }
+   static void lets_give_this_a_try() 
+   {
+       Scanner myScanner = new Scanner(System.in);
+       int number = 5;
+       String[] myStringArray = {"0", "1", "2", "3", "4"};
+       for (int i = 0; i < number; i++) {
+                int count = i + 1;
+                System.out.print("Give the value for the string in position " + count + ":  ");
+                myStringArray[i] = myScanner.next();
+            }
+   }
+   static void since_the_last_one_worked()
+   {
+       int number = 5;
+       String[] myStringArray = {"0", "1", "2", "3", "4"};
+       for (int i = 0; i < number; i++) {
+                int numberPlusOne = i + 1;
+                System.out.println("The string in position " + numberPlusOne + " is " + myStringArray[i] + ".");
+            }
+   }
+   static void this_one_could_be_weird()
+   {
+       Scanner myScanner = new Scanner(System.in);
+       boolean fillAnElement = true;
+       int elementNumber;
+       String[] myStringArray = {"0", "1", "2", "3", "4"};
+       
+       System.out.print("Type true if you'd like to replace one or more elements in the array.  ");
+            fillAnElement = myScanner.nextBoolean();
+            
+      // Gives the user a chance to change an element value by prompting the element number placement and the string value.
+      while (fillAnElement) {
+       System.out.print("Which element number would you like to replace?  Type 1 - 5.");
+                elementNumber = myScanner.nextInt();
+                int printNumber = elementNumber + 1; // Adds one to the index.
+                
+                System.out.print("Enter a new value for element " + elementNumber + ":  ");
+                myStringArray[elementNumber - 1] = myScanner.next();
+                
+                System.out.print("Type true if you'd like to replace one or more elements in the array.  ");
+                fillAnElement = myScanner.nextBoolean();
+                
+            }
+   }
+   static void last_but_not_least()
+   {
+       int number = 5;
+       String[] myStringArray = {"0", "1", "2", "3", "4"};
+       for (int i = 0; i < number; i++) {
+                int numberPlusOne = i + 1;
+                System.out.println("The string in position " + numberPlusOne + " is " + myStringArray[i] + ".");
+            }
+   }
+   public static void main(String[] args) 
+   {
+       // Initialize Booleans to allow repetition of tasks.
+       boolean playAgain = true;
+       boolean fillAnElement = true;
+       
+       // Initialize an array of length 5.
+       int number = 5;
+       String[] myStringArray = {"0", "1", "2", "3", "4"};
+        
+       // Create a variable for the user to choose a particular element.
+       int elementNumber;
+        
+       // Initialize scanner.
+       Scanner myScanner = new Scanner(System.in);
+        
+       // The tasks of the program that the user can repeat through the boolean playAgain.
+       do {
+           clearScreen();
+           
+           lets_see_if_this_works();
+            
+            // Prompts user to input strings for the array.
+            lets_give_this_a_try();
+            
+            // Uses for loop to print out the elements in the array.
+           lets_do_this_again();
+            
+           since_the_last_one_worked();
+            
+            // Prompts user for choice of changing the value of an element in the array.
+            System.out.print("Type true if you'd like to replace one or more elements in the array.  ");
+            fillAnElement = myScanner.nextBoolean();
+            
+            // Gives the user a chance to change an element value by prompting the element number placement and the string value.
+            this_one_could_be_weird();
+            
+            // Prints the values in the array.
+            System.out.println("Here are the values in the array.");
+            
+            last_but_not_least();
+            
+            try_again();
+            playAgain = myScanner.nextBoolean();
+        } while (playAgain);  // Program loops while user enters true, ends when user enters false.
+    }
+}
